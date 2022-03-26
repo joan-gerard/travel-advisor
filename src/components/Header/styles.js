@@ -2,7 +2,7 @@ import { alpha, makeStyles } from '@material-ui/core/styles';
 
 export default makeStyles((theme) => ({
   appbar: {
-    backgroundColor: '#51B53F'
+    backgroundColor: '#8CB53F'
   },
   title: {
     display: 'none',

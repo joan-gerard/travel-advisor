@@ -1,4 +1,3 @@
-import './App.css';
 import { CssBaseline, Grid } from '@material-ui/core';
 
 import { Header } from './components/Header/Header';
@@ -11,6 +10,7 @@ export const App = () => {
       <CssBaseline />
       <Header />
       <Grid container spacing={3} style={{ width: '100%' }}>
+      {/* see notes for below */}
         <Grid item xs={12} md={4}>
           <List />
         </Grid>
