@@ -16,3 +16,10 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 + @material-ui/lab
 + @material-ui/icons
 + @react-google-maps/api
+
+### `learning objectives`
++ Improve React skills
++ Get familiar with Google Maps API
++ Get familiar with MUI library
+
+
