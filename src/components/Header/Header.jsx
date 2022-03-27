@@ -5,10 +5,6 @@ import SearchIcon from '@material-ui/icons/Search';
 
 import useStyles from './styles.js'
 
-// const AppBarStyle = {
-//     background : '#3FB568'
-// }
-
 export const Header = () => {
     const classes = useStyles();
     return (

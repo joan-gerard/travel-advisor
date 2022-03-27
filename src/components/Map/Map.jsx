@@ -11,8 +11,6 @@ export const Map = ({setCoordinates, setBounds, coordinates, bounds}) => {
   const classes = useStyles();
   const isMobile = useMediaQuery('(min-width:600px)'); // see notes
 
-  console.log('THE COORDINATES', coordinates)
-
   return (
     <div className={classes.mapContainer}>
       <GoogleMapReact
@@ -23,14 +21,11 @@ export const Map = ({setCoordinates, setBounds, coordinates, bounds}) => {
         margin={[50, 50, 50, 50]}
         options={''}
         onChange={(e) => {
-          console.log('&&&&&&', e)
           setCoordinates({lat: e.center.lat, lng: e.center.lng})
           setBounds({sw: e.bounds.sw, ne: e.bounds.ne})
         }}
-        // onChange={''}
         // onChildClick={''}
       >
-
       </GoogleMapReact>
     </div>
   )

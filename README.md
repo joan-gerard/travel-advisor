@@ -1,5 +1,5 @@
 ## Project
-A companion application for your next trips. Search for resturants and hotels around you.
+A companion application for your next trips. View restaurants and hotels around you or dynamically when using the map.
 
 ### `learning objectives`
 + Improve React skills

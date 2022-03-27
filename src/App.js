@@ -10,7 +10,6 @@ export const App = () => {
 
   const [coordinates, setCoordinates] = useState({})
   const [bounds, setBounds] = useState({})
-  console.log('THE BOUNDS', bounds)
 
   useEffect(() => {
     navigator.geolocation.getCurrentPosition(({coords: {latitude, longitude}}) => {
@@ -19,15 +18,11 @@ export const App = () => {
   }, [])
 
   useEffect(() => {
-    console.log('TESTING BOUNDS', coordinates, bounds)
     getPlacesData(bounds.sw, bounds.ne)
       .then((data) => {
-        console.log('THE PLACES', data)
         setPlaces(data)
       })
   }, [coordinates, bounds])
-
-console.log('#####', coordinates)
 
   return (
     <>
