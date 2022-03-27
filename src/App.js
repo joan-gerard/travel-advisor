@@ -9,7 +9,8 @@ export const App = () => {
   const [places, setPlaces] = useState([])
 
   const [coordinates, setCoordinates] = useState({})
-  const [bounds, setBounds] = useState(null)
+  const [bounds, setBounds] = useState({})
+  console.log('THE BOUNDS', bounds)
 
   useEffect(() => {
     navigator.geolocation.getCurrentPosition(({coords: {latitude, longitude}}) => {
@@ -18,14 +19,14 @@ export const App = () => {
   }, [])
 
   useEffect(() => {
-    getPlacesData()
+    console.log('TESTING BOUNDS', coordinates, bounds)
+    getPlacesData(bounds.sw, bounds.ne)
       .then((data) => {
         console.log('THE PLACES', data)
         setPlaces(data)
       })
   }, [coordinates, bounds])
 
-console.log('THE PLACES - 2', places)
 console.log('#####', coordinates)
 
   return (
@@ -35,13 +36,15 @@ console.log('#####', coordinates)
       <Grid container spacing={3} style={{ width: '100%' }}>
       {/* see notes for below */}
         <Grid item xs={12} md={4}>
-          <List />
+          <List
+            places={places} />
         </Grid>
         <Grid item xs={12} md={8}>
           <Map 
             setCoordinates={setCoordinates}
             setBounds={setBounds}
-            coordinates={coordinates} />
+            coordinates={coordinates}
+            bounds={bounds} />
         </Grid>
       </Grid>
     </>

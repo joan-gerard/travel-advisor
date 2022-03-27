@@ -6,7 +6,7 @@ import Rating from '@material-ui/lab'
 
 import useStyles from './styles.js'
 
-export const Map = ({setCoordinates, setBounds, coordinates}) => {
+export const Map = ({setCoordinates, setBounds, coordinates, bounds}) => {
 
   const classes = useStyles();
   const isMobile = useMediaQuery('(min-width:600px)'); // see notes
@@ -25,7 +25,7 @@ export const Map = ({setCoordinates, setBounds, coordinates}) => {
         onChange={(e) => {
           console.log('&&&&&&', e)
           setCoordinates({lat: e.center.lat, lng: e.center.lng})
-          setBounds({ne: e.center.ne, sw: e.center.sw})
+          setBounds({sw: e.bounds.sw, ne: e.bounds.ne})
         }}
         // onChange={''}
         // onChildClick={''}
